@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///Users/fatoubarry/Desktop/AlterWay_Pack_Formulaire-3.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlterWay — Démarrer le Pack Complet</title>
+<link href="./Formulaire AlterWay — Démarrer le Pack Complet_files/css2" rel="stylesheet">
+<script src="./Formulaire AlterWay — Démarrer le Pack Complet_files/email.min.js"></script>
+<style>
+:root {
+  --noir:#1A1714; --beige:#F5EFE6; --beige-mid:#EDE5D8; --beige-dark:#D9CFC2;
+  --caramel:#C4956A; --taupe:#7A6A5A; --white:#FDFAF6;
+  --fd:'Playfair Display',Georgia,serif; --fb:'DM Sans',sans-serif;
+}
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--fb); background:var(--noir); min-height:100vh; display:flex; flex-direction:column; }
+
+/* NAV */
+nav { background:var(--noir); padding:0 5vw; height:60px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.06); }
+.nav-logo { font-family:var(--fd); font-size:20px; font-weight:900; color:var(--white); text-decoration:none; }
+.nav-logo span { color:var(--caramel); font-style:italic; }
+.nav-back { color:rgba(255,255,255,.4); font-size:13px; text-decoration:none; display:flex; align-items:center; gap:8px; transition:color .2s; }
+.nav-back:hover { color:var(--white); }
+
+/* HERO */
+.page-hero { padding:72px 5vw 48px; text-align:center; position:relative; overflow:hidden; }
+.page-hero::before { content:''; position:absolute; left:50%; top:-60px; transform:translateX(-50%); width:400px; height:400px; border-radius:50%; border:1px solid rgba(196,149,106,.1); pointer-events:none; }
+.hero-badge { display:inline-block; background:rgba(196,149,106,.15); color:var(--caramel); font-size:11px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; padding:6px 14px; margin-bottom:20px; }
+.page-hero h1 { font-family:var(--fd); font-size:clamp(32px,5vw,52px); font-weight:900; color:var(--white); line-height:1.1; margin-bottom:14px; }
+.page-hero h1 em { color:var(--caramel); font-style:italic; }
+.page-hero p { font-size:16px; color:rgba(255,255,255,.5); max-width:480px; margin:0 auto; line-height:1.7; }
+
+/* PACK RECAP */
+.pack-recap { display:flex; justify-content:center; gap:0; margin:40px auto; max-width:640px; flex-wrap:wrap; }
+.recap-item { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.06); padding:16px 20px; text-align:center; flex:1; min-width:120px; }
+.recap-icon { font-size:18px; margin-bottom:6px; }
+.recap-label { font-size:11px; color:rgba(255,255,255,.4); line-height:1.5; }
+.recap-val { font-family:var(--fd); font-size:14px; font-weight:700; color:var(--white); margin-top:3px; }
+
+/* FORM WRAPPER */
+.form-wrapper { flex:1; padding:0 5vw 80px; display:flex; justify-content:center; }
+.form-card { background:var(--beige); max-width:580px; width:100%; padding:48px; position:relative; }
+.form-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:var(--caramel); }
+
+.form-title { font-family:var(--fd); font-size:24px; font-weight:900; color:var(--noir); margin-bottom:6px; }
+.form-sub { font-size:14px; color:var(--taupe); margin-bottom:32px; line-height:1.6; }
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.form-group { margin-bottom:20px; }
+.form-group label { display:block; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--taupe); margin-bottom:7px; }
+.form-group label span { color:var(--caramel); }
+.form-group input, .form-group select, .form-group textarea {
+  width:100%; padding:14px 16px; border:1.5px solid var(--beige-dark);
+  background:var(--white); font-family:var(--fb); font-size:14px; color:var(--noir);
+  transition:border-color .2s; outline:none; appearance:none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--caramel); }
+.form-group textarea { resize:vertical; min-height:100px; }
+.form-group select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A7A6A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; padding-right:40px; }
+
+.form-notice { background:var(--beige-mid); border-left:3px solid var(--caramel); padding:14px 16px; margin-bottom:24px; font-size:13px; color:var(--taupe); line-height:1.65; }
+.form-notice strong { color:var(--noir); }
+
+.submit-btn { width:100%; padding:16px; background:var(--caramel); color:var(--white); border:none; font-family:var(--fb); font-size:15px; font-weight:700; letter-spacing:.04em; cursor:pointer; transition:background .2s; }
+.submit-btn:hover { background:#b0844e; }
+.submit-btn:disabled { background:var(--beige-dark); color:var(--taupe); cursor:not-allowed; }
+
+/* SUCCESS STATE */
+.success-state { display:none; text-align:center; padding:48px 32px; }
+.success-icon { font-size:48px; margin-bottom:20px; }
+.success-state h2 { font-family:var(--fd); font-size:28px; font-weight:900; color:var(--noir); margin-bottom:12px; }
+.success-state p { font-size:15px; color:var(--taupe); line-height:1.7; max-width:380px; margin:0 auto 28px; }
+.success-btn { display:inline-block; background:var(--noir); color:var(--white); font-size:13px; font-weight:700; padding:12px 28px; text-decoration:none; letter-spacing:.04em; }
+
+/* ERROR */
+.error-msg { display:none; background:#FEE; border-left:3px solid #E07070; padding:12px 16px; font-size:13px; color:#c00; margin-bottom:16px; }
+.field-error { border-color:#E07070 !important; }
+
+/* FOOTER */
+footer { background:var(--noir); border-top:1px solid rgba(255,255,255,.06); padding:20px 5vw; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.footer-logo { font-family:var(--fd); font-size:15px; font-weight:900; color:rgba(255,255,255,.25); }
+.footer-logo span { color:var(--caramel); }
+.footer-copy { font-size:11px; color:rgba(255,255,255,.2); }
+
+@media(max-width:600px) {
+  .form-card { padding:32px 24px; }
+  .form-row { grid-template-columns:1fr; }
+  .pack-recap { gap:8px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="file:///Users/fatoubarry/Desktop/AlterWay_LandingPage_FINALE_V3.html" class="nav-logo">Alter<span>Way</span></a>
+  <a href="file:///Users/fatoubarry/Desktop/AlterWay_LandingPage_FINALE_V3.html" class="nav-back">← Retour aux offres</a>
+</nav>
+
+<div class="page-hero">
+  <div class="hero-badge">Niveau 3 — Premium</div>
+  <h1>Démarrer le<br><em>Pack AlterWay Complet</em></h1>
+  <p>Remplis ce formulaire et je te recontacte dans les 24h pour planifier notre premier échange.</p>
+</div>
+
+<div class="pack-recap">
+  <div class="recap-item">
+    <div class="recap-icon">📖</div>
+    <div class="recap-val">Guide inclus</div>
+    <div class="recap-label">PDF complet</div>
+  </div>
+  <div class="recap-item">
+    <div class="recap-icon">🎯</div>
+    <div class="recap-val">5 sessions</div>
+    <div class="recap-label">visio personnalisées</div>
+  </div>
+  <div class="recap-item">
+    <div class="recap-icon">💬</div>
+    <div class="recap-val">Suivi WhatsApp</div>
+    <div class="recap-label">entre les sessions</div>
+  </div>
+  <div class="recap-item">
+    <div class="recap-icon">✦</div>
+    <div class="recap-val">175€</div>
+    <div class="recap-label">accompagnement complet</div>
+  </div>
+</div>
+
+<div class="form-wrapper">
+  <div class="form-card">
+
+    <div id="form-content">
+      <div class="form-title">Dis-moi tout</div>
+      <div class="form-sub">Plus tu m'en dis, mieux je pourrai préparer notre premier échange et adapter l'accompagnement à ta situation.</div>
+
+      <div class="error-msg" id="error-msg">Une erreur s'est produite. Merci de réessayer ou d'écrire directement à Alterway.lab@gmail.com</div>
+
+      <form id="pack-form" novalidate="">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Prénom <span>*</span></label>
+            <input type="text" id="prenom" placeholder="Ton prénom" required="">
+          </div>
+          <div class="form-group">
+            <label>Nom <span>*</span></label>
+            <input type="text" id="nom" placeholder="Ton nom" required="">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Adresse email <span>*</span></label>
+          <input type="email" id="email" placeholder="ton@email.com" required="">
+        </div>
+
+        <div class="form-group">
+          <label>Numéro de téléphone <span>*</span></label>
+          <input type="tel" id="telephone" placeholder="+33 6 XX XX XX XX" required="">
+        </div>
+
+        <div class="form-group">
+          <label>Ta situation actuelle <span>*</span></label>
+          <select id="situation" required="">
+            <option value="">Sélectionne ta situation</option>
+            <option value="BTS">En BTS</option>
+            <option value="Bachelor">En Bachelor</option>
+            <option value="Master">En Master</option>
+            <option value="Reconversion">En reconversion professionnelle</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Le secteur que tu vises</label>
+          <input type="text" id="secteur" placeholder="Ex : Commerce, Marketing, RH, Finance...">
+        </div>
+
+        <div class="form-group">
+          <label>Où en es-tu dans ta recherche ?</label>
+          <select id="avancement">
+            <option value="">Sélectionne une option</option>
+            <option value="debut">Je commence tout juste</option>
+            <option value="milieu">J'ai commencé mais sans résultat</option>
+            <option value="entretiens">J'ai des entretiens mais rien ne se concrétise</option>
+            <option value="urgent">C'est urgent, ma rentrée approche</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Ce qui te bloque le plus en ce moment</label>
+          <textarea id="blocage" placeholder="Dis-moi ce sur quoi tu voudrais qu&#39;on travaille en priorité..."></textarea>
+        </div>
+
+        <div class="form-notice">
+          <strong>Ce qui se passe ensuite :</strong> je te recontacte par email dans les 24h pour qu'on fixe ensemble un premier appel de 15 minutes gratuit, sans engagement. Si c'est le bon fit, on démarre le pack.
+        </div>
+
+        <a href="https://calendly.com/alterway-lab" target="_blank" class="submit-btn" style="display:block; text-align:center; text-decoration:none;">
+          Je veux démarrer le pack, prenons rendez-vous
+        </a>
+      </form>
+    </div>
+
+    <div class="success-state" id="success-state">
+      <div class="success-icon">🔑</div>
+      <h2>Message bien reçu !</h2>
+      <p>Je t'envoie un email de confirmation dans quelques secondes. Je te recontacte dans les 24h pour qu'on planifie notre premier échange.</p>
+      <p style="margin-top:16px; font-size:14px; color:var(--taupe);">Tu peux aussi réserver directement un créneau dès maintenant :</p>
+      <a href="https://calendly.com/alterway-lab" target="_blank" class="success-btn" style="margin-top:12px; display:inline-block; background:var(--caramel);">Réserver un créneau sur Calendly</a>
+      <a href="file:///Users/fatoubarry/Desktop/AlterWay_LandingPage_FINALE_V3.html" class="success-btn" style="margin-top:12px; display:inline-block;">Retour à l'accueil</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Alter<span>Way</span></div>
+  <div class="footer-copy">© 2026 AlterWay · alterway.lab@gmail.com</div>
+</footer>
+
+<script>
+// ── EmailJS init ──
+// INSTRUCTIONS : 
+// 1. Va sur emailjs.com → crée un compte gratuit
+// 2. Dashboard → "Add New Service" → Gmail → connecte alterway.lab@gmail.com → copie le SERVICE_ID
+// 3. Dashboard → "Email Templates" → crée un template avec ces variables :
+//    {{prenom}}, {{nom}}, {{email}}, {{telephone}}, {{situation}}, {{secteur}}, {{avancement}}, {{blocage}}
+//    Copie le TEMPLATE_ID
+// 4. Dashboard → "Account" → copie ta PUBLIC_KEY
+// 5. Remplace les 3 valeurs ci-dessous par tes vraies valeurs
+
+const EMAILJS_PUBLIC_KEY = 'VOTRE_PUBLIC_KEY';   // ← à remplacer
+const EMAILJS_SERVICE_ID = 'VOTRE_SERVICE_ID';   // ← à remplacer
+const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID'; // ← à remplacer
+
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+// ── Validation ──
+function validate() {
+  let ok = true;
+  document.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
+
+  const required = ['prenom','nom','email','telephone','situation'];
+  required.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el.value.trim()) { el.classList.add('field-error'); ok = false; }
+  });
+
+  const email = document.getElementById('email');
+  if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    email.classList.add('field-error'); ok = false;
+  }
+  return ok;
+}
+
+// ── Submit ──
+document.getElementById('pack-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  document.getElementById('error-msg').style.display = 'none';
+
+  if (!validate()) return;
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Envoi en cours...';
+
+  const params = {
+    to_email: 'Alterway.lab@gmail.com',
+    prenom:     document.getElementById('prenom').value.trim(),
+    nom:        document.getElementById('nom').value.trim(),
+    email:      document.getElementById('email').value.trim(),
+    telephone:  document.getElementById('telephone').value.trim(),
+    situation:  document.getElementById('situation').value,
+    secteur:    document.getElementById('secteur').value.trim() || 'Non renseigné',
+    avancement: document.getElementById('avancement').value || 'Non renseigné',
+    blocage:    document.getElementById('blocage').value.trim() || 'Non renseigné',
+  };
+
+  try {
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('success-state').style.display = 'block';
+  } catch (err) {
+    console.error(err);
+    document.getElementById('error-msg').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Je veux démarrer le pack, prenons rendez-vous';
+  }
+});
+</script>
+
+
+
+</body></html>

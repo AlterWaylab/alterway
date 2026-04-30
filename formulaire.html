@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<!-- saved from url=(0064)file:///Users/fatoubarry/Desktop/AlterWay_Pack_Formulaire-3.html -->
-<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AlterWay — Démarrer le Pack Complet</title>
-<link href="./Formulaire AlterWay — Démarrer le Pack Complet_files/css2" rel="stylesheet">
-<script src="./Formulaire AlterWay — Démarrer le Pack Complet_files/email.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
 :root {
   --noir:#1A1714; --beige:#F5EFE6; --beige-mid:#EDE5D8; --beige-dark:#D9CFC2;
@@ -93,8 +94,8 @@ footer { background:var(--noir); border-top:1px solid rgba(255,255,255,.06); pad
 <body>
 
 <nav>
-  <a href="file:///Users/fatoubarry/Desktop/AlterWay_LandingPage_FINALE_V3.html" class="nav-logo">Alter<span>Way</span></a>
-  <a href="file:///Users/fatoubarry/Desktop/AlterWay_LandingPage_FINALE_V3.html" class="nav-back">← Retour aux offres</a>
+  <a href="index.html" class="nav-logo">Alter<span>Way</span></a>
+  <a href="index.html" class="nav-back">← Retour aux offres</a>
 </nav>
 
 <div class="page-hero">
@@ -135,31 +136,31 @@ footer { background:var(--noir); border-top:1px solid rgba(255,255,255,.06); pad
 
       <div class="error-msg" id="error-msg">Une erreur s'est produite. Merci de réessayer ou d'écrire directement à Alterway.lab@gmail.com</div>
 
-      <form id="pack-form" novalidate="">
+      <form id="pack-form" novalidate>
         <div class="form-row">
           <div class="form-group">
             <label>Prénom <span>*</span></label>
-            <input type="text" id="prenom" placeholder="Ton prénom" required="">
+            <input type="text" id="prenom" placeholder="Ton prénom" required>
           </div>
           <div class="form-group">
             <label>Nom <span>*</span></label>
-            <input type="text" id="nom" placeholder="Ton nom" required="">
+            <input type="text" id="nom" placeholder="Ton nom" required>
           </div>
         </div>
 
         <div class="form-group">
           <label>Adresse email <span>*</span></label>
-          <input type="email" id="email" placeholder="ton@email.com" required="">
+          <input type="email" id="email" placeholder="ton@email.com" required>
         </div>
 
         <div class="form-group">
-          <label>Numéro de téléphone <span>*</span></label>
-          <input type="tel" id="telephone" placeholder="+33 6 XX XX XX XX" required="">
+          <label>Numéro de téléphone <span style="color:var(--taupe);font-size:11px;">(optionnel)</span></label>
+          <input type="tel" id="telephone" placeholder="+33 6 XX XX XX XX">
         </div>
 
         <div class="form-group">
           <label>Ta situation actuelle <span>*</span></label>
-          <select id="situation" required="">
+          <select id="situation" required>
             <option value="">Sélectionne ta situation</option>
             <option value="BTS">En BTS</option>
             <option value="Bachelor">En Bachelor</option>
@@ -187,15 +188,18 @@ footer { background:var(--noir); border-top:1px solid rgba(255,255,255,.06); pad
 
         <div class="form-group">
           <label>Ce qui te bloque le plus en ce moment</label>
-          <textarea id="blocage" placeholder="Dis-moi ce sur quoi tu voudrais qu&#39;on travaille en priorité..."></textarea>
+          <textarea id="blocage" placeholder="Dis-moi ce sur quoi tu voudrais qu'on travaille en priorité..."></textarea>
         </div>
 
         <div class="form-notice">
           <strong>Ce qui se passe ensuite :</strong> je te recontacte par email dans les 24h pour qu'on fixe ensemble un premier appel de 15 minutes gratuit, sans engagement. Si c'est le bon fit, on démarre le pack.
         </div>
 
-        <a href="https://calendly.com/alterway-lab" target="_blank" class="submit-btn" style="display:block; text-align:center; text-decoration:none;">
-          Je veux démarrer le pack, prenons rendez-vous
+        <button type="submit" class="submit-btn" id="submit-btn">
+          Envoyer ma demande
+        </button>
+        <a href="https://calendly.com/alterway-lab" target="_blank" style="display:block; margin-top:12px; padding:16px; text-align:center; background:var(--beige-mid); color:var(--noir); font-size:15px; font-weight:600; text-decoration:none; letter-spacing:.04em;">
+          Prenons rendez-vous sur Calendly
         </a>
       </form>
     </div>
@@ -206,7 +210,7 @@ footer { background:var(--noir); border-top:1px solid rgba(255,255,255,.06); pad
       <p>Je t'envoie un email de confirmation dans quelques secondes. Je te recontacte dans les 24h pour qu'on planifie notre premier échange.</p>
       <p style="margin-top:16px; font-size:14px; color:var(--taupe);">Tu peux aussi réserver directement un créneau dès maintenant :</p>
       <a href="https://calendly.com/alterway-lab" target="_blank" class="success-btn" style="margin-top:12px; display:inline-block; background:var(--caramel);">Réserver un créneau sur Calendly</a>
-      <a href="file:///Users/fatoubarry/Desktop/AlterWay_LandingPage_FINALE_V3.html" class="success-btn" style="margin-top:12px; display:inline-block;">Retour à l'accueil</a>
+      <a href="index.html" class="success-btn" style="margin-top:12px; display:inline-block;">Retour à l'accueil</a>
     </div>
 
   </div>
@@ -228,9 +232,9 @@ footer { background:var(--noir); border-top:1px solid rgba(255,255,255,.06); pad
 // 4. Dashboard → "Account" → copie ta PUBLIC_KEY
 // 5. Remplace les 3 valeurs ci-dessous par tes vraies valeurs
 
-const EMAILJS_PUBLIC_KEY = 'VOTRE_PUBLIC_KEY';   // ← à remplacer
-const EMAILJS_SERVICE_ID = 'VOTRE_SERVICE_ID';   // ← à remplacer
-const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID'; // ← à remplacer
+const EMAILJS_PUBLIC_KEY = 'JfH01WOO3Eo1lFmYs';   // ← à remplacer
+const EMAILJS_SERVICE_ID = 'service_iuvezqc';   // ← à remplacer
+const EMAILJS_TEMPLATE_ID = 'template_oq7n16r'; // ← à remplacer
 
 emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
@@ -239,7 +243,7 @@ function validate() {
   let ok = true;
   document.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
 
-  const required = ['prenom','nom','email','telephone','situation'];
+  const required = ['prenom','nom','email','situation'];
   required.forEach(id => {
     const el = document.getElementById(id);
     if (!el.value.trim()) { el.classList.add('field-error'); ok = false; }
@@ -288,6 +292,5 @@ document.getElementById('pack-form').addEventListener('submit', async function(e
 });
 </script>
 
-
-
-</body></html>
+</body>
+</html>
